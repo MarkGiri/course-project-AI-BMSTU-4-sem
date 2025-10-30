@@ -1,0 +1,50 @@
+% !TeX program = lualatex
+% !BIB program = biber
+
+\documentclass[a4paper,14pt,russian]{extreport}
+
+\input{preambule.inc}
+
+\addbibresource{ref-lib.bib}
+
+\begin{document}
+	\renewcommand{\contentsname}{\centerline{СОДЕРЖАНИЕ}}
+	
+	%\include{00-title}
+	\includepdf[pages=1]{titul.pdf}
+	
+	\setcounter{page}{4}
+	
+	\include{01-abstract.tex}
+	
+	\phantomsection
+	\pdfbookmark[0]{\textbf{СОДЕРЖАНИЕ}}{toc}
+	\tableofcontents
+	
+	\include{02-abbreviations}
+	
+	\include{10-introduction}
+	
+	\include{20-analyth}
+	
+	\include{30-design}
+	
+	\include{40-implement}
+	
+	\include{50-research}
+	
+	\include{51-orgprav}
+	
+	\include{60-conclusion}
+	
+	\phantomsection
+	\printbibliography[
+	title=\centerline{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
+	]
+	\addcontentsline{toc}{chapter}{\textbf{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}}
+	
+	\include{70-appendix}
+	
+	\includepdf[pages=-,angle=90]{presentation.pdf}
+
+\end{document}

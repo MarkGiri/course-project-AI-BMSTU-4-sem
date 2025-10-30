@@ -1,0 +1,17 @@
+idef0/
+trash/
+*.aux
+*.blg
+*.bcf
+*.bbl
+*.out
+*.log
+*.xml
+*.gz
+*.toc
+makefile
+venv/
+*.gguf
+__pycache__/
+report/report.synctex(busy)
+references/[0-9]*/
